@@ -1,0 +1,18 @@
+{%load static%}
+{%block title%}
+<title>Company Create</title>
+{%endblock title%}
+
+{% block content %}
+    {% include 'base/navbar.html' with title="Home" %}
+    
+
+{% for family in families %}
+    <div>{{family.spousename}}</div>
+    <div>{{family.childname}}</div>
+
+{% endfor %}
+    
+        
+        
+{% endblock content%}
