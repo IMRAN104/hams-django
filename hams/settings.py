@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'wordcount',
     'users',
     'family',
     'django.contrib.admin',
@@ -121,5 +122,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL='home'
+LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'

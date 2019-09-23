@@ -1,0 +1,22 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>All Texts and Word Counts</title>
+{% endblock title %}
+
+
+{% block content %}
+{% include 'base/navbar.html' with title="Home" %}
+
+{% if texts %}
+{% for t in texts %}
+<div>
+    <p>{{t.text}}</p>
+    <h4>{{ t.no_of_words }}</h4>
+</div>
+
+{% endfor %}
+{% endif %}
+
+{% endblock content %}

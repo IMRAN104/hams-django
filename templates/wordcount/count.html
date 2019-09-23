@@ -1,0 +1,19 @@
+{% extends "Base/base.html" %}
+{% load static %}
+
+
+{% block title %}
+<title>Count the No. of Words in Some Texts Here!</title>
+{% endblock title %}
+
+{% block content %}
+{% include 'base/navbar.html' with title="Count Words" %}
+
+<form action="{% url 'count' %}" method="POST">
+    {% csrf_token %}
+    <label for="text">Text</label>
+    <input type="text" name="text" />
+    <button type="submit" class="btn btn-outline-primary btn-sm">Count</button>
+</form>
+
+{% endblock content %}
