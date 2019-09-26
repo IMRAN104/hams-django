@@ -1,8 +1,15 @@
-<div class="row" style="width: 100vw; justify-content: space-between; padding-left: 25px">
-    <p>
+<div class="row m-2" style="justify-content: space-between">
+    <div class="h1" style="color: blue;">
         {{title}}
-    </p>
-    <a href="{% url 'logout' %}" class="btn btn-outline-primary btn-sm">
-        Logout
-    </a>
+    </div>
+    <div style=" padding-left: 25px">
+
+        <a href="{% url customlink %}" class="btn btn-outline-primary btn-sm">
+            {{customlink}}
+        </a>
+        <a href="{% url 'logout' %}" class="btn btn-outline-primary btn-sm">
+            Logout
+        </a>
+
+    </div>
 </div>

@@ -10,6 +10,7 @@ def count(request):
         text = r.get('text')
         no_of_words = len(text.split())
         t = Text(text=text, no_of_words=no_of_words)
+        print(t)
         t.save()
         context = {
             'texts': Text.objects.all()
