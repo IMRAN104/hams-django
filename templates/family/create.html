@@ -1,15 +1,18 @@
 {%  load static %}
 
 <html>
-    <head>
-        <title>Create Family</title>
-    </head>
-    <body>
-        <form method="post">
-            {% csrf_token %}
-            <input type="text" name="spousename"/>
-            <input type="text" name="childname"/>
-            <button type="submit">Add</button>
-        </form>
-    </body>
+
+<head>
+    <title>Create Family</title>
+</head>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="spousename" />
+        <input type="text" name="childname" />
+        <button type="submit">Add</button>
+    </form>
+</body>
+
 </html>

@@ -4,15 +4,16 @@
 {%endblock title%}
 
 {% block content %}
-    {% include 'base/navbar.html' with title="Home" %}
-    
+  {% include 'base/navbar.html' with title="Home" %}
+	{% for family in families %}
 
-{% for family in families %}
-    <div>{{family.spousename}}</div>
-    <div>{{family.childname}}</div>
+		<div>
+			{{family.spousename}}
+		</div>
+		<div>
+			{{family.childname}}
+		</div>
 
-{% endfor %}
-    
-        
-        
+	{% endfor %}
+
 {% endblock content%}

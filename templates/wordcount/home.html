@@ -12,8 +12,7 @@
 {% if texts %}
 {% for t in texts %}
 <div>
-    <p>{{t.text}}</p>
-    <h4>{{ t.no_of_words }}</h4>
+    <span class="h4">{{t.text}}</span> - <span class="h2">{{ t.no_of_words }}</span>
 </div>
 
 {% endfor %}

@@ -1,16 +1,31 @@
-<div class="row m-2" style="justify-content: space-between">
-    <div class="h1" style="color: blue;">
+{% comment %} I want to make it responsive using media query. it breaks if the width is less than 400 px. {% endcomment %}
+{% comment %} <style>
+    @media only screen and (max-width: 400px) {
+  .child {
+    
+  }
+    }
+</style> {% endcomment %}
+{% comment %} <style>
+  @media (max-width: 400px) {
+    btn{
+        &:extend(.btn-sm);
+    }
+}
+</style> {% endcomment %}
+<div class="row m-2" style="display:flex; justify-content: space-between">
+    <div class="h2" style="color: blue;">
         {{title}}
     </div>
     <div class="parent" style="padding-left: 25px; display: flex; justify-content: flex-end">
         <div class="child">
-            <a href="{% url 'home' %}" class="btn btn-primary btn-lg">Home</a>
+            <a href="{% url 'home' %}" class="btn btn-primary ml-1">Home</a>
         </div>
         <div class="child">
-            <a href="{% url 'count' %}" class="btn btn-outline-primary">Count Word</a>
+            <a href="{% url 'count' %}" class="btn btn-success ml-1">Count Word</a>
         </div>
         <div class="child">
-            <a href="{% url 'logout' %}" class="btn btn-outline-primary">Logout</a>
+            <a href="{% url 'logout' %}" class="btn btn-warning ml-1">Logout</a>
         </div>
     </div>
 </div>
