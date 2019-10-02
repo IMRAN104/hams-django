@@ -1,5 +1,7 @@
+.pycache
 .jsbeautifyrc
-
+*/**/__pycache__
+*/__pycache__
 .vscode
 .autogit
 # Byte-compiled / optimized / DLL files

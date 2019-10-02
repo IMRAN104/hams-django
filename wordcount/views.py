@@ -40,3 +40,4 @@ def home(request):
         'texts': Text.objects.all()
     }
     return render(request, 'wordcount/home.html', context)
+
