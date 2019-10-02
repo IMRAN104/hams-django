@@ -3,8 +3,18 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from .models import Text
 
+# ? Better Comments Example
+
+# ! Unused Code!  Alert
+# ? Is this ok? Ask Arnob    Query
+# todo hjkhjkhjkhjk  TODO
+#  hhjkhjkhjkh  Normal Comment
+# // This will not be here, delete before publishing
+# * This function requires the render package Important
 
 # Create your views here.
+
+
 def hello(self, hshs):
     print("hello world")
 
