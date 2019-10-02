@@ -3,8 +3,21 @@ from django.db import models
 
 
 class Family(models.Model):
-    spousename=models.CharField(max_length=100,default="Selena Gomez")
-    # logo=models.ImageField(upload_to='companies_logo',default='companies_logo/default.jpg')
-    childname=models.CharField(max_length=100,default="rich kid")
+    spouseName=models.CharField(max_length=100,null=True, blank=True)
+    spouseDOB = models.DateField(null=True)
+    spouseEmail = models.CharField(max_length=50, null=True, blank=True)
+    spouseNID = models.CharField(max_length=50, null=True)
+    spouseMobile = models.CharField(max_length=50, null=True)
+    spousePicture=models.ImageField(upload_to='spouse_pic',null=True)
+    spouseNIDPicture=models.ImageField(upload_to='spouse_nid_pic',null=True)
+
     def __str__(self):
-        return "spouse name" + self.spousename + " , "+ "child name: "+ self.childname 
+        return "spouse name" + self.spousename
+
+class Child(models.Model):
+    childName = models.CharField(max_length=100,null=True, blank=True)
+    childDOB = models.DateField(null=True)
+    childPicture=models.ImageField(upload_to='spouse_pic',null=True)
+    Family = models.ForeignKey(Family, on_delete= models.SET_NULL, null = True)
+
+    
