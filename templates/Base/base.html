@@ -20,6 +20,17 @@
       overflow-x: hidden;
     }
   </style>
+  <style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: yellow
+  color: white;
+  text-align: center;
+}
+</style>
   {%block style%}
   {%endblock%}
 </head>
@@ -28,6 +39,11 @@
   {%block content%}
   {%endblock content%}
 
+  <div class="footer">
+  {% block footer %}
+    
+  {% endblock footer %}
+  </div>
   {%block js%}
   {%endblock%}
 

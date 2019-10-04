@@ -1,3 +1,5 @@
+import operator
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 
@@ -26,11 +28,22 @@ def count(request):
         r = request.POST
         text = r.get('text')
         no_of_words = len(text.split())
+        wordcountdictionary = {}
+        for word in text.split():
+            if word in wordcountdictionary:
+                wordcountdictionary[word] += 1
+            else:
+                wordcountdictionary[word] = 1
+        # print(wordcountdictionary)
         t = Text(text=text, no_of_words=no_of_words)
-        print(t)
+        # print(t)
         t.save()
+        sortedworddictionary = sorted(
+            wordcountdictionary.items(), key=operator.itemgetter(1), reverse=True)
+        print(sortedworddictionary)
         context = {
-            'texts': Text.objects.all()
+            'texts': Text.objects.all(),
+            'sortedworddictionary': sortedworddictionary
         }
         return render(request, 'wordcount/home.html', context)
     else:
@@ -43,3 +56,6 @@ def home(request):
         'texts': Text.objects.all()
     }
     return render(request, 'wordcount/home.html', context)
+@login_required
+def about(request):
+    return render(request, 'wordcount/about.html')

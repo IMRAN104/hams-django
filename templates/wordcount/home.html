@@ -7,15 +7,33 @@
 
 
 {% block content %}
+{% comment %} 
+customlink does not work
+{% endcomment %}
 {% include 'base/navbar.html' with title="Home" customlink="count" %}
 
-{% if texts %}
-{% for t in texts %}
-<div>
-    <span class="h4">{{t.text}}</span> - <span class="h2">{{ t.no_of_words }}</span>
+<div style="text-align:center; color: blue">
+
+  {% if sortedworddictionary %}  
+    <h2>Individual words in the input texts:</h2>
+    
+    {% for word, count in sortedworddictionary %}
+    <p>{{ word }} :- {{ count }}</p>
+    {% endfor %}
+  {% endif %}
+  
 </div>
 
-{% endfor %}
+
+{% if texts %}
+  <h3 style="text-align:center; color: blue;">
+    All input texts' wordcounts:
+  </h3>
+  {% for t in texts %}
+    <div style="text-align: center">
+        <span class="h6">{{t.text}}</span> - <span class="h4">{{ t.no_of_words }}</span>
+    </div>
+  {% endfor %}
 {% endif %}
 
 {% endblock content %}
