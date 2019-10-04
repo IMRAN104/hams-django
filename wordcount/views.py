@@ -15,10 +15,12 @@ from .models import Text
 # Create your views here.
 
 
+@login_required
 def hello(self, hshs):
     print("hello world")
 
 
+@login_required
 def count(request):
     if request.method == 'POST':
         r = request.POST
@@ -35,9 +37,9 @@ def count(request):
         return render(request, 'wordcount/count.html')
 
 
+@login_required
 def home(request):
     context = {
         'texts': Text.objects.all()
     }
     return render(request, 'wordcount/home.html', context)
-
