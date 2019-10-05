@@ -56,6 +56,8 @@ def home(request):
         'texts': Text.objects.all()
     }
     return render(request, 'wordcount/home.html', context)
+
+
 @login_required
 def about(request):
     return render(request, 'wordcount/about.html')

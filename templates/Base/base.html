@@ -39,11 +39,13 @@
   {%block content%}
   {%endblock content%}
 
-  <div class="footer">
-  {% block footer %}
-    
-  {% endblock footer %}
-  </div>
+<div class="footer">
+  {% comment %} {% block footer %} {% endcomment %}
+    <div>Posted by: S.M. Imran Emon || Contact Me: <a href="mailto:sme.imran13@gmail.com">
+    sme.imran13@gmail.com</a> || &#169Copyright S.M. Imran Emon, 2019
+    </div>  
+  {% comment %} {% endblock footer %} {% endcomment %}
+</div>
   {%block js%}
   {%endblock%}
 
