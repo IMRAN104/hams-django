@@ -18,11 +18,6 @@ from .models import Text
 
 
 @login_required
-def hello(self, hshs):
-    print("hello world")
-
-
-@login_required
 def count(request):
     if request.method == 'POST':
         r = request.POST

@@ -7,5 +7,7 @@ urlpatterns = [
     path('', include('family.urls')),
     path('users/', include('users.urls')),
     path('wordcount/', include('wordcount.urls'), name='wordcount'),
-    # path('portfolio/', include('portfolio.urls'))
+    path('blog/', include('blog.urls')),
+    path('jobs/', include('jobs.urls'))
+
 ]
