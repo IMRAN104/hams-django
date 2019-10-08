@@ -80,8 +80,14 @@ WSGI_APPLICATION = 'hams.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hamsdb',
+        'USER': 'postgres',
+        'PASSWORD': 'Nomena04',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
@@ -126,3 +132,6 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+# added later for file upload reasons , nicks tutorial of portfolio, apps are: blog and jobs
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # file upload location
+MEDIA_URL = '/media/'

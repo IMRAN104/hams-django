@@ -12,7 +12,7 @@ class Family(models.Model):
     spouseNIDPicture = models.ImageField(upload_to='spouse_nid_pic', null=True)
 
     def __str__(self):
-        return "spouse name" + self.spousename
+        return self.spouseName
 
 
 class Child(models.Model):
