@@ -17,3 +17,30 @@
 	{% endfor %}
 
 {% endblock content%}
+
+
+
+
+
+
+
+{%load static%}
+{%block title%}
+<title>Company Create</title>
+{%endblock title%}
+
+{% block content %}
+    {% include 'base/navbar.html' with title="Home" %}
+    
+<div style="text-align: center;">
+{% for family in families %}
+    <div>{{family.spouse_name}}</div>
+    <div>{{family.child_name}}</div>
+    <div>{{family.spouse_date_of_birth}}</div>
+    <div style="margin-bottom: 20px">{{family.child_date_of_birth}}</div>
+
+{% endfor %}
+</div>
+        
+        
+{% endblock content%}
