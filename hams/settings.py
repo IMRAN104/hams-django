@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'hamsdb',
         'USER': 'postgres',
-        'PASSWORD': 'Nomena04',
+        'PASSWORD': 'Richabir1$',
         'HOST': 'localhost',
         'PORT': '5432'
     }
