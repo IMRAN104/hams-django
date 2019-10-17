@@ -39,13 +39,31 @@
   {%block content%}
   {%endblock content%}
 
-<div class="footer">
-  {% comment %} {% block footer %} {% endcomment %}
+{% comment %} <div class="footer">
     <div>Posted by: S.M. Imran Emon || Contact Me: <a href="mailto:sme.imran13@gmail.com">
     sme.imran13@gmail.com</a> || &#169Copyright S.M. Imran Emon, 2019
     </div>  
-  {% comment %} {% endblock footer %} {% endcomment %}
-</div>
+</div> {% endcomment %}
+<footer class="text-muted footer">
+
+{% block upper-footer %}
+  {% comment %} if something to add at the top of the original footer {% endcomment %}
+{% endblock upper-footer %}
+  
+  <div class="container">
+    {% comment %} <p class="float-right">
+      <a href="#">Back to top</a>
+    </p> {% endcomment %}
+    <p>&copy; S.M. Imran Emon, 2019, All Rights Reserved</p>
+    <p class="mr-auto">Contact Me: <a href="mailto:sme.imran13@gmail.com">
+    sme.imran13@gmail.com</a>.</p>
+  </div>
+  
+  {% block below-footer %}
+  {% comment %} if something to add at the bottom of the original footer {% endcomment %}    
+  {% endblock below-footer %}
+    
+</footer>
   {%block js%}
   {%endblock%}
 

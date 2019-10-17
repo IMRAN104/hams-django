@@ -8,10 +8,25 @@
     
 <div style="text-align: center;">
 {% for family in families %}
-    <div>{{family.spouse_name}}</div>
-    <div>{{family.child_name}}</div>
-    <div>{{family.spouse_date_of_birth}}</div>
+{{ families.count }}
+{{ family }}
+    <div>{{family.spouseName}}</div>
+    <div>{{family.spouseDOB}}</div>
+    <div>{{family.spouseEmail}}</div>
+    <div>{{family.spouseNID}}</div>
+    <div>{{family.spouseMobile}}</div>
+    <div>{{family.spousePicture}}</div>
+    
+    {% comment %} <img src="/media/spouse_pic/photo_2019-10-15_18-16-22.jpg" alt=""> {% endcomment %}
+    <img src="/media/{{family.spousePicture}}" alt="">
+    {% comment %} {% source = "/media/" + family.spousePicture %}
+    <img src={{source}} alt="hgjahgj"> {% endcomment %}
+
+    {% comment %} <div>{{family.spouseNIDPicture}}</div> {% endcomment %}
+    <div style="margin-bottom: 20px">{{family.child_name}}</div>
     <div style="margin-bottom: 20px">{{family.child_date_of_birth}}</div>
+    {% comment %} <div style="margin-bottom: 20px">{{family.child_picture}}</div> {% endcomment %}
+
 
 {% endfor %}
 </div>
