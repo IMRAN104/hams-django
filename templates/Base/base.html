@@ -26,9 +26,12 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: yellow
+  background-color: black;
   color: white;
   text-align: center;
+  font-size: .7em;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 </style>
   {%block style%}
@@ -39,11 +42,6 @@
   {%block content%}
   {%endblock content%}
 
-{% comment %} <div class="footer">
-    <div>Posted by: S.M. Imran Emon || Contact Me: <a href="mailto:sme.imran13@gmail.com">
-    sme.imran13@gmail.com</a> || &#169Copyright S.M. Imran Emon, 2019
-    </div>  
-</div> {% endcomment %}
 <footer class="text-muted footer">
 
 {% block upper-footer %}
@@ -54,9 +52,8 @@
     {% comment %} <p class="float-right">
       <a href="#">Back to top</a>
     </p> {% endcomment %}
-    <p>&copy; S.M. Imran Emon, 2019, All Rights Reserved</p>
-    <p class="mr-auto">Contact Me: <a href="mailto:sme.imran13@gmail.com">
-    sme.imran13@gmail.com</a>.</p>
+    &copy; S.M. Imran Emon, 2019, All Rights Reserved || Contact Me: <a href="mailto:sme.imran13@gmail.com">
+    sme.imran13@gmail.com</a>.
   </div>
   
   {% block below-footer %}
