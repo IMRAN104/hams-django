@@ -21,18 +21,19 @@
     }
   </style>
   <style>
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: black;
-  color: white;
-  text-align: center;
-  font-size: .7em;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-}
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-size: .9em;
+      font-weight: bold;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
 </style>
   {%block style%}
   {%endblock%}
@@ -48,11 +49,11 @@
   {% comment %} if something to add at the top of the original footer {% endcomment %}
 {% endblock upper-footer %}
   
-  <div class="container">
+  <div class="container text-center">
     {% comment %} <p class="float-right">
       <a href="#">Back to top</a>
     </p> {% endcomment %}
-    &copy; S.M. Imran Emon, 2019, All Rights Reserved || Contact Me: <a href="mailto:sme.imran13@gmail.com">
+    &copy; S.M. Imran Emon {% now "Y" %}, All Rights Reserved || Contact Me: <a href="mailto:sme.imran13@gmail.com">
     sme.imran13@gmail.com</a>.
   </div>
   

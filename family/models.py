@@ -32,13 +32,4 @@ class Child(models.Model):
 
     def __str__(self):
         return self.child_name
-# # TODO
-# class Family(models.Model):
-#     spouse_name = models.CharField(max_length=100, null=True,blank=True )
-#     spouse_date_of_birth =  models.DateField(default=date.today, null=True,blank=True )
-#     spouse_email = models.EmailField(null=True,blank=True )
-#     spouse_mobile = models.CharField(max_length=14, null=True, blank=True)
-#     spouse_picture = models.ImageField(upload_to='profile_pics',default='default.jpg', null=True,blank=True )
-
-#     def __str__(self):
-#         return self.spouse_name
+# # TODO    #Already Done

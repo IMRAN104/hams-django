@@ -1,0 +1,60 @@
+{% extends 'Base/base.html' %}
+{%load static%}
+{%block title%}
+<title>Blog</title>
+{%endblock title%}
+
+{% block style %}
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+{% endblock style %}
+
+{% block content %}
+  {% include 'base/navbar.html' with title="Latest Blog Posts" %}
+
+<main role="main">
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        
+        {% for blog_post in blog_posts %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="/media/{{blog_post.image}}" alt="image of blog" />
+              <div class="card-body">
+                <p class="card-text">{{ blog_post.title}}</p>
+                <p class="card-text">{{ blog_post.pub_date }}</p>
+                {% comment %} {% blog_body_minified = blog_post.body.split()[:5] %} {% endcomment %}  
+                {% comment %} the above line does not work, i dont know why {% endcomment %}
+                {% comment %} <p class="card-text">{{ " ".join(blog_body_minified) }}</p> {% endcomment %}
+                <p class="card-text">{{ blog_post.body|truncatechars:8 }}</p>
+                {% comment %} But this works; because it is filter, filters are used in django-template to perform certain functionality. You can create your own filter, search internet for details. {% endcomment %}
+                
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</main>
+
+  
+{% endblock content %}
+  
