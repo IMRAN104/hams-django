@@ -16,3 +16,13 @@ def blog_home(request):
         'blog_posts': blog_posts
     }
     return render(request, 'blog/blog_home.html', context)
+
+
+@login_required
+def blog_details(request, blog_id):
+    print(blog_id)
+    detailed_blog = get_object_or_404(Blog, pk=blog_id)
+    context = {
+        'blog': detailed_blog
+    }
+    return render(request, 'blog/blog_details.html', context)

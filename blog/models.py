@@ -12,3 +12,9 @@ class Blog(models.Model):
     def __str__(self):
         title_minified = self.title.split()[:5]
         return " ".join(title_minified)
+
+    def body_summary(self):
+        return self.body[0:100]
+
+    def pub_date_pretty(self):
+        return self.pub_date.strftime('%b %e, %Y')
