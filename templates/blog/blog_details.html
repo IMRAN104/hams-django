@@ -6,5 +6,10 @@
 
 {% block content %}
   {{ blog.title }}
+  {{ blog.body }}
+  {{ blog.pub_date }}
+  <div class="m-5">
+    <img src="/media/{{ blog.image }}" alt="">
+  </div>
 {% endblock content %}
   
