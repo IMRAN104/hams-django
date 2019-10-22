@@ -1,0 +1,18 @@
+{% extends 'Base/base.html' %}
+{%load static%}
+{% load staticfiles %}
+
+{%block title%}
+<title>Family Information</title>
+{%endblock title%}
+
+{% block content %}
+  {% comment %} {% include 'base/navbar.html' with title="Home" %} {% endcomment %}
+  {% include 'base/navbar.html' with title="Home" %}
+  
+  <div style="text-align: center;">
+    <img src="/static/Imran.jpg" alt="" height="300px" width="300px">
+  </div>
+        
+        
+{% endblock content%}
