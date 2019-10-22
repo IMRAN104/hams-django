@@ -1,15 +1,17 @@
 {% extends 'Base/base.html' %}
 {%load static%}
+{% load staticfiles %}
+
 {%block title%}
 <title>Family Information</title>
 {%endblock title%}
 
 {% block content %}
-    {% comment %} {% include 'base/navbar.html' with title="Home" %} {% endcomment %}
-    {% include 'base/navbar.html' with title="Home" %}
-    
-<div style="text-align: center;">
-{% for family in families %}
+  {% comment %} {% include 'base/navbar.html' with title="Home" %} {% endcomment %}
+  {% include 'base/navbar.html' with title="Home" %}
+  
+  <div style="text-align: center;">
+  {% for family in families %}
     <div>{{family.spouse_name}}</div>
     <div>{{family.spouse_date_of_birth}}</div>
     <div>{{family.spouse_email}}</div>
@@ -22,10 +24,8 @@
     <div style="margin-bottom: 20px">{{family.child_name}}</div>
     <div style="margin-bottom: 20px">{{family.child_date_of_birth}}</div>
     <img src="/media/{{family.child_picture}}" alt="">
-
-
-{% endfor %}
-</div>
+  {% endfor %}
+  </div>
         
         
 {% endblock content%}

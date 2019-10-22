@@ -1,3 +1,5 @@
+{% load static %}
+{% load staticfiles %}
 {% block style %}
 {% comment %} I want to make it responsive using media query. it breaks if the width is less than 400 px. {% endcomment %}
 {% comment %} <style>
@@ -32,7 +34,10 @@
             <a href="{% url 'home' %}" class="btn btn-primary ml-1">Home</a>
         </div>
         <div class="child">
-            <a href="{% url 'count' %}" class="btn btn-success ml-1">Count Word</a>
+          <a class="btn btn-success ml-1" href="{% static 'resume.pdf' %}">Resume</a>
+        </div>
+        <div class="child">
+            <a href="{% url 'count' %}" class="btn btn-info ml-1">Count Word</a>
         </div>
         <div class="child">
             <a href="{% url 'about' %}" class="btn btn-primary ml-1">About</a>
