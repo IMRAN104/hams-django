@@ -1,0 +1,20 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Send Email</title>
+{% endblock title %}
+
+
+{% block content %}
+{% comment %} 
+customlink does not work
+{% endcomment %}
+{% include 'base/navbar.html' with title="Send Email" %}
+
+<div style="text-align:center; color: blue">
+	Sent the Email to the Recipients
+  
+</div>
+
+{% endblock content %}

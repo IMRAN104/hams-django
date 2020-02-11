@@ -12,5 +12,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('jobs/', include('jobs.urls')),
     path('portfolio/', include('jobs.urls')),
+    path('email/', include('emailsending.urls')),
+
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # This line is for showing images and files to the client via url

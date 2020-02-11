@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'emailsending',
     'blog',
     'jobs',
     'wordcount',
@@ -135,3 +136,10 @@ LOGIN_URL = 'login'
 # added later for file upload reasons , nicks tutorial of portfolio, apps are: blog and jobs
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # file upload location
 MEDIA_URL = '/media/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'pos.py.pgre@gmail.com'
+EMAIL_HOST_PASSWORD = 'Richabir1$'
