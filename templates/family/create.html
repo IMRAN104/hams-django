@@ -1,24 +1,3 @@
-{%  load static %}
-
-<html>
-
-<head>
-    <title>Create Family</title>
-</head>
-
-<body>
-    <form method="post">
-        {% csrf_token %}
-        <input type="text" name="spousename" />
-        <input type="text" name="childname" />
-        <button type="submit">Add</button>
-    </form>
-</body>
-
-</html>
-
-
-
 {% extends 'Base/base.html' %}
 {% load static %}
 
@@ -33,113 +12,12 @@
 <form method="post">
     {% csrf_token %}
     <div class="row">
-        <label for="spouse_name">Spouse Name</label>
-        <input type="text" name="spouse_name" />
-    </div>
-
-    <div class="row">
-        <label for="spouse_date_of_birth">Spouse Date of Birth</label>
-        <input type="date" name="spouse_date_of_birth" />
-    </div>
-
-    <div id="new_chq">
-        <div class="">
-            <div class="row">
-                <label for="child_name">Child Name</label>
-                <input type="text" name="child_name" />
-            </div>
-            <div class="row">
-                <label for="child_date_of_birth">Child Date of Birth</label>
-                <input type="date" name="child_date_of_birth" />
-            </div>
-            <div class="row">
-                <button type="submit" class="btn btn-outline-primary">Add Family Information</button>
-            </div>
+        <div class="col">
+            <label for="spouse_name">Spouse Name</label>
         </div>
-    </div>
-
-    <input type="hidden" value="1" id="total_chq">
-    <button onclick="add()">Add</button>
-    <button onclick="remove()">remove</button>
-</form>
-
-
-<!-- Added Later For Testing -->
-
-<!-- <div id="new_chq"></div>
-<input type="hidden" value="1" id="total_chq"> -->
-{% endblock content %}
-
-
-{% block js %}
-<script>
-    function add() {
-        // alert(parseInt($('#total_chq').val()));
-        var idx = parseInt($('#total_chq').val()) + 1;
-        //var new_input = "<input type='text' id='new_" + idx + "'>";
-
-        $('#new_chq').append(
-            '<div id="new_" + idx >' +
-            '<div class="row">' +
-            '<label for="child_name">Child Name</label>' +
-            '<input type="text" name="child_name" />' +
-            '</div>' +
-            '<div class="row">' +
-            '<label for="child_date_of_birth">Child Date of Birth</label>' +
-            '<input type="date" name="child_date_of_birth" />' +
-            '</div>' +
-            '<div class="row">' +
-            '<button type="submit" class="btn btn-outline-primary">Add Family Information</button>' +
-            '</div>' +
-            '</div>'
-        );
-        $('#total_chq').val(idx);
-    }
-
-    function remove() {
-        var last_chq_no = $('#total_chq').val();
-        // alert(last_chq_no);
-        if (last_chq_no > 1) {
-            $('#new_' + last_chq_no).remove();
-            $('#total_chq').val(last_chq_no - 1);
-        }
-    }
-</script>
-{% endblock js %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% extends 'Base/base.html' %}
-{% load static %}
-
-
-{% block title %}
-<title>Create Family</title>
-{% endblock title %}
-
-
-{% block content %}
-{% include 'base/navbar.html' with title="Home" %}
-<form method="post">
-    {% csrf_token %}
-    <div class="row">
-        <label for="spouse_name">Spouse Name</label>
-        <input type="text" name="spouse_name" />
+        <div class="col">
+            <input type="text" name="spouse_name" />
+        </div>
     </div>
 
     <div class="row">
